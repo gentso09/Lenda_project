@@ -1,0 +1,97 @@
+<html>
+<head>
+	<script src="lenda.js"></script>
+	<script src="quicken.js"></script>
+	<script src="wellsfargo.js"></script>
+	<script src="savings_calc.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Current Monthly Payment</td>
+			<td><input type="number" id="curr_pmt" value=536.82 readonly></td>
+		</tr>
+		<tr>
+			<td>Current Interest Rate(%)</td>
+			<td><input type="number" id="rate" value=5></td>
+		</tr>
+		<tr>
+			<td>Remaining Balance on Mortgage</td>
+			<td><input type="number" id="balance" value=100000></td>
+		</tr>
+		<tr>
+			<td>Years Remaining on Current Loan</td>
+			<td><input type="number" id="rem_term" value=30></td>
+		</tr>
+		<tr>
+			<td>New Loan Terms (years)</td>
+			<td><input type="number" id="new_term" value=30></td>
+		</tr>
+	</table>
+	<br/>
+	<input type="button" value="Compare Savings" onclick="populate_savings(document.getElementById('balance').value, document.getElementById( 'rem_term' ).value, document.getElementById( 'new_term' ).value, document.getElementById( 'curr_pmt' ).value )"
+	<br/>
+	<div>
+		<table style="float:left">
+			<th>Lenda</th>
+			<tr><td></td></tr>
+			<tr>
+				<td>New Interest Rate(%):</td>
+				<td><input type="number" id="lenda_rate" readonly></td>
+			</tr>
+			<tr>
+				<td>New Monthly Payment:</td>
+				<td><input type="number" id="lenda_pmt" readonly></td>
+			</tr>
+			<tr>
+				<td>Closing Costs:</td>
+				<td><input type="number" id="lenda_closing_cost" readonly></td>
+			</tr>
+			<tr>
+				<td>Total Savings:</td>
+				<td><input type="number" id="lenda_savings" readonly></td>
+			</tr>
+		</table>
+		<table style="float:left">
+			<th>Quicken</th>
+			<tr><td></td></tr>
+			<tr>
+				<td>New Interest Rate(%):</td>
+				<td><input type="number" id="quicken_rate" readonly></td>
+			</tr>
+			<tr>
+				<td>New Monthly Payment:</td>
+				<td><input type="number" id="quicken_pmt" readonly></td>
+			</tr>
+			<tr>
+				<td>Closing Costs:</td>
+				<td><input type="number" id="quicken_closing_cost" readonly></td>
+			</tr>
+			<tr>
+				<td>Total Savings:</td>
+				<td><input type="number" id="quicken_savings" readonly></td>
+			</tr>
+		</table>
+		<table>
+			<th>Wells Fargo</th>
+			<tr><td></td></tr>
+			<tr>
+				<td>New Interest Rate(%):</td>
+				<td><input type="number" id="wells_rate" readonly></td>
+			</tr>
+			<tr>
+				<td>New Monthly Payment:</td>
+				<td><input type="number" id="wells_pmt" readonly></td>
+			</tr>
+			<tr>
+				<td>Closing Costs:</td>
+				<td><input type="number" id="wells_closing_cost" readonly></td>
+			</tr>
+			<tr>
+				<td>Total Savings:</td>
+				<td><input type="number" id="wells_savings" readonly></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
